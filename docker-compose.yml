@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  db_dump:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    networks:
+      - db_network
+
+networks:
+  db_network:
+    external: true
