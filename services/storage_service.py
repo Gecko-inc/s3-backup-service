@@ -1,5 +1,4 @@
 import os
-import datetime
 
 import boto3
 
@@ -20,5 +19,5 @@ class StorageService:
             aws_secret_access_key=self.s3_secret_access_key,
             aws_access_key_id=self.s3_access_key_id,
         )
-        file_name = f"{datetime.datetime.now()}-dump.dump"
+        file_name = "db_data.dump"
         s3.upload_file("dump.dump", self.s3_bucket, file_name)
